@@ -108,7 +108,7 @@ class MyTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //전화걸기 alert
+    //전화걸기 alert 
          let optionMenu = UIAlertController(title : "전화걸기 : " + foodStores[indexPath.row].name, message: foodStores[indexPath.row].tel, preferredStyle: .actionSheet)
          let call = UIAlertController(title : "전화중 " + foodStores[indexPath.row].name, message: foodStores[indexPath.row].tel, preferredStyle: .alert)
          let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler:nil)
