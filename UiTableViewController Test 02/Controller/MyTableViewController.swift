@@ -27,6 +27,13 @@ class MyTableViewController: UITableViewController {
     
     var foodStoreType = ["돼지국밥집", "중화요리", "분식점", "중화요리", "도시락", "중화요리"]
    */
+    @IBAction func del(_ sender: Any) {
+            tableView.isEditing = true
+    }
+    @IBAction func non(_ sender: Any) {
+            tableView.isEditing = false
+    }
+
     
     // 데이터 클래스 객체 생성
     var foodStores:[FoodStore] = [
@@ -37,6 +44,26 @@ class MyTableViewController: UITableViewController {
         FoodStore(name: "토마토 도시락", image: "05", address: "부산광역시 부산진구 양정1동 산19-8", tel: "051-863-6997", menu: "치킨마요, 참치마요, 돈불와퍼, 돈치와퍼, 돈까스카레", type: "도시락"),
         FoodStore(name: "홍콩반점", image: "06", address: "부산광역시 부산진구 양정동 353-38", tel: "051-863-6997", menu: "짬뽕, 짜장면, 짬뽕밥, 볶음밥, 탕수육, 군만두", type: "중화요리"),
     ]
+    
+    //선택한 셀 삭제
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            foodStores.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    //셀의 데이터 이동
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let tmp1 = foodStores[to.row]
+        foodStores[to.row] = foodStores[fromIndexPath.row]
+        foodStores[fromIndexPath.row] = tmp1
+        
+        tableView.reloadData()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

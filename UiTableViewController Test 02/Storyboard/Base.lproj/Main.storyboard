@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,6 +84,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="fHx-4e-WvK">
+                        <leftBarButtonItems>
+                            <barButtonItem title="delete" id="HCc-60-s3B">
+                                <connections>
+                                    <action selector="del:" destination="cFp-Sf-CKj" id="S9P-iO-znL"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Done" id="MnA-Gp-j6J">
+                                <connections>
+                                    <action selector="non:" destination="cFp-Sf-CKj" id="Jhw-UZ-ic1"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Map" id="kxV-Wm-Hc0">
                             <connections>
                                 <segue destination="7Tl-bp-4Uh" kind="show" identifier="totalMapView" id="fnn-kt-IWm"/>
@@ -121,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CtE-7I-XWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="578"/>
+            <point key="canvasLocation" x="1980" y="829"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="dCS-vR-Y9R">
@@ -141,14 +154,14 @@
                                 <rect key="frame" x="0.0" y="355" width="375" height="268"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" textLabel="a1m-YE-OJY" style="IBUITableViewCellStyleDefault" id="Yy1-KD-ch1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" textLabel="CrY-Bc-Y7l" style="IBUITableViewCellStyleDefault" id="Yy1-KD-ch1">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yy1-KD-ch1" id="oUs-nP-Mzk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="a1m-YE-OJY">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CrY-Bc-Y7l">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -238,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJf-NZ-qX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2810" y="-45"/>
+            <point key="canvasLocation" x="2746" y="-62"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="STE-sq-WCd">
