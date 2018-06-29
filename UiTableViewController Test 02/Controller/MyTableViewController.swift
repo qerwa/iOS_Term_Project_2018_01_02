@@ -33,7 +33,7 @@ class MyTableViewController: UITableViewController {
     @IBAction func non(_ sender: Any) {
             tableView.isEditing = false
     }
-
+  
     
     // 데이터 클래스 객체 생성
     var foodStores:[FoodStore] = [
